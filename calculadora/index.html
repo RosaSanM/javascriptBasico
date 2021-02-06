@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <!--Animación-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!--hoja de estilos-->
+    <link rel="stylesheet" href="./bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles.css">
+
+</head>
+<body>
+    <div class="container animate__animated animate__bounceInLeft">
+        <div class="row justify-content-center align-items-center ">
+            <div class=" caja col-4">
+                <form class="form-group ">
+                    <!--Espacio donde ver números y resultados-->
+                    <input class= "form-control my-3" type="number" id= resultado placeholder="">
+                    <!--números a calcular-->
+                    <input type="button" class="btn btn-outline-dark m-2 p-4" value = "1" onClick = "marcar(uno)">
+                    <input type="button" class="btn btn-outline-dark m-2 p-4" value = "2" onClick = "marcar(dos)">
+                    <input type="button" class="btn btn-outline-dark m-2 p-4" value = "3" onClick = "marcar(tres)">
+                    <input type="button" class="btn btn-outline-dark m-2 p-4" value = "4" onClick = "marcar(cuatro)">
+                    <input type="button" class="btn btn-outline-dark m-2 p-4" value = "5" onClick = "marcar(cinco)">
+                    <input type="button" class="btn btn-outline-dark m-2 p-4" value = "6" onClick = "marcar(seis)">
+                    <input type="button" class="btn btn-outline-dark m-2 p-4" value = "7" onClick = "marcar(siete)">
+                    <input type="button" class="btn btn-outline-dark m-2 p-4" value = "8" onClick = "marcar(ocho)">
+                    <input type="button" class="btn btn-outline-dark m-2 p-4" value = "9" onClick = "marcar(nueve)">
+                    <input type="button" class="btn btn-outline-dark m-2 p-4" value = "0" onClick = "marcar(cero)">
+                    <!--operación a realizar-->
+                    <input type="button" class="btn btn-outline-dark m-2 p-4" value = "+" onClick = "operacion(value)">
+                    <input type="button" class="btn btn-outline-dark m-2 p-4" value = "-" onClick = "operacion(value)">
+                    <input type="button" class="btn btn-outline-dark m-2 p-4" value = "*" onClick = "operacion(value)">
+                    <input type="button" class="btn btn-outline-dark m-2 p-4" value = "/" onClick = "operacion(value)">
+                    <!--botón que llama a la función-->
+                    <input type="button" class="btn btn-outline-dark m-2 p-4" value="=" onClick= "calcular()">
+                    <!--botón de reset-->
+                    <input type="button" class="btn btn-outline-dark m-2 p-4" value="C" onClick= "limpiar()">
+                </form>    
+            </div>    
+        </div>    
+    </div>
+    
+
+    <!--scripts-->
+    <script src="./bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
