@@ -59,6 +59,7 @@ function calcular(){
        resetear();
    }else if(resta){
        num2 = parseInt(document.getElementById("resultado").value);
+       resultado = num1-num2;
        num1 = parseInt(document.getElementById("resultado").value); 
        resetear();
    }else if(multi){
@@ -68,9 +69,10 @@ function calcular(){
        resetear();
    }else if(divi){
        num2 = parseInt(document.getElementById("resultado").value);
-       if(num2 == 0){
+        if(num2 == 0){
           document.getElementById("operador").innerHTML = "No puedes dividir entre 0 !!";    
-      }else{
+          document.getElementById("resultado").value = "";  
+        }else{
            resultado = (num1/num2);
            num1 = parseInt(document.getElementById("resultado").value);
            resetear(); 
@@ -83,6 +85,7 @@ function calcular(){
 //limpiar pantalla
 function limpiar(){
     document.getElementById("resultado").value = "";
+    document.getElementById("operador").innerHTML = "Operación";
 }
 //
 function resetear(){
