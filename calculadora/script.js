@@ -31,18 +31,23 @@ function operacion(value){
         num1 = parseInt(document.getElementById("resultado").value);
         suma = true;
         limpiar();
+        document.getElementById("operador").innerHTML = "sumando";
+        
     }else if(value == "-"){
         num1 = parseInt(document.getElementById("resultado").value);
         resta = true;
         limpiar();
+        document.getElementById("operador").innerHTML = "Restando";
     }else if(value == "*"){
         num1 = parseInt(document.getElementById("resultado").value);
         multi = true;
         limpiar();
+        document.getElementById("operador").innerHTML = "Multiplicando";
     }else if(value == "/"){
         num1 = parseInt(document.getElementById("resultado").value);
         divi = true;
         limpiar();
+        document.getElementById("operador").innerHTML = "Dividiendo";
     } 
 }
 
@@ -54,8 +59,7 @@ function calcular(){
        resetear();
    }else if(resta){
        num2 = parseInt(document.getElementById("resultado").value);
-       resultado = (num1-num2);
-       num1 = parseInt(document.getElementById("resultado").value);
+       num1 = parseInt(document.getElementById("resultado").value); 
        resetear();
    }else if(multi){
        num2 = parseInt(document.getElementById("resultado").value);
@@ -64,9 +68,14 @@ function calcular(){
        resetear();
    }else if(divi){
        num2 = parseInt(document.getElementById("resultado").value);
-       resultado = num1/num2;
-       num1 = parseInt(document.getElementById("resultado").value);
-       resetear();
+       if(num2 == 0){
+          document.getElementById("operador").innerHTML = "No puedes dividir entre 0 !!";    
+      }else{
+           resultado = (num1/num2);
+           num1 = parseInt(document.getElementById("resultado").value);
+           resetear(); 
+        }
+        
    }
    
    document.getElementById("resultado").value = resultado;
@@ -81,4 +90,5 @@ function resetear(){
     resta = false;
     multi = false;
     divi  = false;
+    document.getElementById("operador").innerHTML = "Operación";
 }
